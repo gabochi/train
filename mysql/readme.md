@@ -45,4 +45,24 @@ NOTA: Una posibilidad es usar `UPDATE` en lugar de `REPLACE`
 ***
 ## Repo train
 Creé este repositorio como me sugirió Dave, una especie de *training blog*.
+***
 
+## Insertar
+[refe](https://www.mysqltutorial.org/mysql-insert-statement.aspx)
+
+## Insertar en bash
+1. La tabla qye elegí no tiene valores por defecto, de manera que no puedo insertar columnas aisladas.  En principio hice que se ingresen uno por uno los campos, por defecto aparecen valores inventados que pueden editarse.
+2. Usé `COUNT(*)` para poder saber qué valor correspondía en la primera columna que siempre es un id.  Luego un pequeño REGEX para obtener únicamente el número del output de mysql.  Para probar REGEX [](https://regex101.com/) está bueno.  Usé `grep -o` para que me muestre los matches únicamente y `[0-9]*` para matchear números.
+3. Una vez que estaba fucionando ok, implementé el nombre de la base como variable de entorno como sugirió Dave.  `TRAIN_DATABASE=classicmodels ./inserta.sh` o `. .env` en el script.
+
+## Update
+[refe](https://www.mysqltutorial.org/mysql-update-data.aspx)
+
+## Update en bash
+1. Encontré un código muy simple para poder parsear argumentos en bash: [](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash#13359121)
+2. Para que sea un poco más lógico, pasé de la tabla de offices a employees como sugiere el ejemplo de la [referencia](https://www.mysqltutorial.org/mysql-update-data.aspx)
+3. Es un poco molesto tener que usar comillas dobles y simples en los parámetros, tampoco tiene mucho sentido el script de update ya que es prácticamente igual al comando de mysql (sobre todo considerando que el WHERE es obligatorio para no hacer desastres).  Ejemplo: `update set:"email='gabochi@github.com'" where:"lastName='vinazza'"`. Si no se ponen todos los parámetros, sencillamente se rompe y no cambia nada.
+__Reflexión:__ Me encanta hacer todo en bash, más ahora con este parser de argumentos.  Es más lento que en python pero mucho más directo ya que no tengo que usar ningún objeto, simplemente ejecutar el comando que quiera de mysql con --execute.  Pero precisamente por eso, aprendo más de mysql que de "cómo usar mysql con bash" porque básicamente es correr el comando directamente.  En Python por lo menos tengo que aprender cómo se usan los métodos del módulo mysql y todas esas cosas horribles.
+
+***
+### En python

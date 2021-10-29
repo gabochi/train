@@ -6,7 +6,7 @@
 # COMANDO="USE classicmodels; DESC offices;"
 
 # Build first part of the command.
-COMANDO="USE classicmodels; SELECT * FROM offices"
+COMANDO="USE classicmodels; SELECT * FROM employees"
 
 # If no args, end the command.  Otherwise, complete the command.
 [ -z $1 ] && COMANDO="$COMANDO;" || COMANDO="$COMANDO WHERE $1 LIKE '$2';"

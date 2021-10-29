@@ -420,6 +420,12 @@ Secure copy.
 
 `git stash --include-untracked && git reset --hard && git clean -fd && git pull`
 
+### Asignar remoto
+
+Si creo primero el git local y luego quiero subirlo a mi github puedo crearlo vacío ahí y después:
+ 
+`git remote add origin git@github.com:gabochi/train.git`
+
 ---
 
 # Python
