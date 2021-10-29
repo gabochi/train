@@ -64,5 +64,10 @@ Creé este repositorio como me sugirió Dave, una especie de *training blog*.
 3. Es un poco molesto tener que usar comillas dobles y simples en los parámetros, tampoco tiene mucho sentido el script de update ya que es prácticamente igual al comando de mysql (sobre todo considerando que el WHERE es obligatorio para no hacer desastres).  Ejemplo: `update set:"email='gabochi@github.com'" where:"lastName='vinazza'"`. Si no se ponen todos los parámetros, sencillamente se rompe y no cambia nada.
 __Reflexión:__ Me encanta hacer todo en bash, más ahora con este parser de argumentos.  Es más lento que en python pero mucho más directo ya que no tengo que usar ningún objeto, simplemente ejecutar el comando que quiera de mysql con --execute.  Pero precisamente por eso, aprendo más de mysql que de "cómo usar mysql con bash" porque básicamente es correr el comando directamente.  En Python por lo menos tengo que aprender cómo se usan los métodos del módulo mysql y todas esas cosas horribles.
 
-***
-### En python
+## Insert en python
+[refe](https://www.w3schools.com/python/python_mysql_select.asp)
+1. Uso la tabla de employees, tengo que averiguar el número que correspondería al próximo empleado.  No se corresponde el número de filas con el de empleados y tampoco están todos los números así que hago un `SELECT MAX(employeeNumber)` para encontrar el valor más alto y sumarle uno al que voy a insertar.
+2. Voy a ver si puedo asignar valores por defecto a todas las columnas restantes directamente desde mysql porque es muy molesto.
+3. Leyendo otra vez [](https://www.mysqltutorial.org/mysql-insert-statement.aspx) me doy cuenta que NULL funciona como default, ¿por qué a mí no me funciona?  Hago un `DESCRIBE employees` y dice clarito NULL en default...
+
+
