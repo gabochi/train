@@ -70,4 +70,24 @@ __Reflexión:__ Me encanta hacer todo en bash, más ahora con este parser de arg
 2. Voy a ver si puedo asignar valores por defecto a todas las columnas restantes directamente desde mysql porque es muy molesto.
 3. Leyendo otra vez [](https://www.mysqltutorial.org/mysql-insert-statement.aspx) me doy cuenta que NULL funciona como default, ¿por qué a mí no me funciona?  Hago un `DESCRIBE employees` y dice clarito NULL en default...
 
+## Update en python
+[refe](https://www.w3schools.com/python/python_mysql_update.asp)
+1. Copié el código de referencia y hardcodié los datos para hacer una prueba
+2. Me encuentro con que en esta compu sí tengo un password así que es una buena oportunidad para usar las variables de entorno como en bash
+3.
+
+***
+## Dump and Restore
+[refe1](https://phoenixnap.com/kb/how-to-backup-restore-a-mysql-database)
+[refe2](https://www.mysqltutorial.org/mysql-drop-database/)
+[refe3](https://www.mysqltutorial.org/mysql-create-database/)
+
+1. Para hacer el dump: `sudo mysqldump -u [user] -p [database_name] > [filename].sql`
+2. Después borré la base con `DROP DATABASE`.
+3. Hacer el restore fue bastante simple también pero algo para recordar es que **hay que crear una base con el nombre de la base de la que queremos hacer restore antes de hacerlo**.  Yo lo hice así:
+`mysql -u root -p --execute "create database classicmodels;" && mysql -u root -p classicmodels < dump.sql`
+
+*NOTA*: En la desktop, al instalarlo, quedó el root de MySql con el password de mi usuario (gabochi).
+
+
 
