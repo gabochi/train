@@ -74,7 +74,8 @@ __Reflexión:__ Me encanta hacer todo en bash, más ahora con este parser de arg
 [refe](https://www.w3schools.com/python/python_mysql_update.asp)
 1. Copié el código de referencia y hardcodié los datos para hacer una prueba
 2. Me encuentro con que en esta compu sí tengo un password así que es una buena oportunidad para usar las variables de entorno como en bash
-3.
+3. Estoy importando el módulo `os` y puedo obtener variables de entorno pero me da un error la autenticación de mysql (desktop), voy a probar en la notebook porque creo que hay algún error en este python, al crear el venv me tiró varios errores comunes acá :(
+4. 
 
 ***
 ## Dump and Restore

@@ -1,10 +1,17 @@
 import mysql.connector
+import os
+
+user = os.environ['USER']
+base = os.environ.get('DB_NAME')
+passw = os.environ.get('DB_PASS')
+
+#print(user,base,passw)
 
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="",
-  database="classicmodels"
+  password=passw,
+  database=base
 )
 
 mycursor = mydb.cursor()
