@@ -5,7 +5,7 @@ import argparse
 parser = argparse.ArgumentParser()
 
 # Agregar argumentos a la instancia
-parser.add_argument("-c", "--column", default="city", help="Columna a consultar")
+parser.add_argument("-c", "--column", default="email", help="Columna a consultar")
 parser.add_argument("-v", "--value", default="%", help="Valor a consultar")
 
 # Asignar parámetros parseados a args
@@ -23,7 +23,7 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 # Arma el comando con los argumentos
-comando = "SELECT * FROM offices WHERE " + args.column + " LIKE '" + args.value + "'"
+comando = "SELECT * FROM employees WHERE " + args.column + " LIKE '" + args.value + "'"
 
 # Ejecutar comando en la instancia
 mycursor.execute(comando)

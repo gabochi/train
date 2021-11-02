@@ -75,7 +75,7 @@ __Reflexión:__ Me encanta hacer todo en bash, más ahora con este parser de arg
 1. Copié el código de referencia y hardcodié los datos para hacer una prueba
 2. Me encuentro con que en esta compu sí tengo un password así que es una buena oportunidad para usar las variables de entorno como en bash
 3. Estoy importando el módulo `os` y puedo obtener variables de entorno pero me da un error la autenticación de mysql (desktop), voy a probar en la notebook porque creo que hay algún error en este python, al crear el venv me tiró varios errores comunes acá :(
-4. 
+4. Logré hacer andar el script de python en la notebook pero no puedo saber del todo si se trataba de un problema de autenticación o de configuración del python en la desktop (recuerdo haber hecho un *apt autoremove* que sacó unos paquetes de python pero teóricamente eso no puede romperlo poque esos paquetes se entiende que no estaban siendo utilizados) 
 
 ***
 ## Dump and Restore
